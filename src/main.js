@@ -101,5 +101,3 @@ const smoothScroll = () => {
 
 searchFormEl.addEventListener('submit', onSearchFormSubmit);
 loadMoreBtn.addEventListener('click', onLoadMoreClick);
-
-hidden

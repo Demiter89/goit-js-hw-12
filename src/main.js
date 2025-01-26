@@ -100,4 +100,8 @@ const smoothScroll = () => {
 };
 
 searchFormEl.addEventListener('submit', onSearchFormSubmit);
+<<<<<<< HEAD
 loadMoreBtn.addEventListener('click', onLoadMoreClick);
+=======
+loadMoreBtn.addEventListener('click', onLoadMoreClick);
+>>>>>>> 78ee188216a67cecf62c57712e9009fc29e57a73

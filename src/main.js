@@ -7,7 +7,7 @@ import { fetchImages } from './js/pixabay-api';
 
 const searchFormEl = document.querySelector('.js-search-form');
 const galleryEl = document.querySelector('.js-gallery');
-const loader = document.querySelector('.loader');
+const loader = document.querySelector('.loader'); // Отримуємо loader
 const loadMoreBtn = document.querySelector('.load-more');
 
 let currentPage = 1; // Змінна для номера сторінки
@@ -28,7 +28,7 @@ const onSearchFormSubmit = async event => {
 };
 
 const loadImages = async () => {
-  loader.classList.remove('hidden'); // Показуємо індикатор завантаження
+  loader.classList.remove('is-hidden'); // Показуємо loader
 
   try {
     const data = await fetchImages(currentQuery, currentPage); // Запит до API
@@ -52,11 +52,11 @@ const loadImages = async () => {
     gallery.refresh();
 
     toggleLoadMoreButton(data.totalHits); // Оновлюємо стан кнопки Load More
-
-    loader.classList.add('hidden'); // Ховаємо індикатор завантаження
   } catch (err) {
     console.error(err);
     iziToast.error({ message: 'An error occurred. Please try again!', position: 'topRight' });
+  } finally {
+    loader.classList.add('is-hidden'); // Завжди ховаємо loader
   }
 };
 
@@ -101,5 +101,3 @@ const smoothScroll = () => {
 
 searchFormEl.addEventListener('submit', onSearchFormSubmit);
 loadMoreBtn.addEventListener('click', onLoadMoreClick);
-
-hidden

@@ -10,7 +10,7 @@
 }
 
 .loader {
-    animation: rotate 1.2s infinite ease-in-out;
+    animation: rotate 2.2s infinite ease-in-out;
     height: 60px;
     width: 60px;
 }
